@@ -69,7 +69,7 @@ const Settings = () => {
         }
     }
 
-    console.log(user);
+    // console.log(user);
 
     return (
         <div className='settings'> 
