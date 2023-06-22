@@ -8,7 +8,7 @@ import { Context } from "../../context/Context";
 
 const Topbar = () => {
   const {user, dispatch} = useContext(Context);
-  const PF = "http://localhost:5000/images/";
+  const PF = "https://mern-tutorials-blog-api.vercel.app/images/";
 
   const handleLogout = ()=>{
     dispatch({type: 'LOGOUT'})
