@@ -15,7 +15,7 @@ const Settings = () => {
 
     const {user, dispatch} = useContext(Context);
     
-    const PF = "http://localhost:5000/images/";
+    const PF = "https://mern-tutorials-blog-api.vercel.app/images/";
 
     const handleSubmit = async (e)=>{
         e.preventDefault();
@@ -36,14 +36,14 @@ const Settings = () => {
             updatedUser.profilePic = filename;
 
             try{
-                await axios.post("http://localhost:5000/api/upload", data);
+                await axios.post("https://mern-tutorials-blog-api.vercel.app/api/upload", data);
             }catch(err){
                 
             }
         }
         
         try{
-            const res = await axios.put('http://localhost:5000/api/users/'+user._id, updatedUser);
+            const res = await axios.put('https://mern-tutorials-blog-api.vercel.app/api/users/'+user._id, updatedUser);
             setSuccess(true);
             
             dispatch({type: 'UPDATE_SUCCESSFUL', payload: res.data});
@@ -55,7 +55,7 @@ const Settings = () => {
     const handleDelete = async ()=>{
         
         try{
-            await axios.delete('http://localhost:5000/api/users/'+user._id, {
+            await axios.delete('https://mern-tutorials-blog-api.vercel.app/api/users/'+user._id, {
                 data: {
                     username: user.username,
                     userId: user._id
