@@ -15,7 +15,7 @@ const Home = () => {
 
     useEffect(()=>{
         const fetchPosts = async function (){
-            const res = await axios.get("http://localhost:5000/api/posts"+search);  // proxy is not working that's why full backend link here
+            const res = await axios.get("https://mern-tutorials-blog-api.vercel.app/api/posts"+search);  // proxy is not working that's why full backend link here
             
             setPosts(res.data);
         }
