@@ -14,7 +14,7 @@ const Register = () => {
         setErr(false);
 
         try{
-            const res = await axios.post('http://localhost:5000/api/auth/register', {
+            const res = await axios.post('https://mern-tutorials-blog-api.vercel.app/api/auth/register', {
                 username: username,
                 email: email,
                 password: password
