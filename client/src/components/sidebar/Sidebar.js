@@ -9,11 +9,11 @@ import { Context } from '../../context/Context';
 const Sidebar = () => {
     const [cats, setCats] = useState([]);
     const {user} = useContext(Context);
-    const PF = "http://localhost:5000/images/";
+    const PF = "https://mern-tutorials-blog-api.vercel.app/images/";
 
     useEffect(()=>{
         const fetchedCats = async function (){
-            const res = await axios.get('http://localhost:5000/api/categories');
+            const res = await axios.get('https://mern-tutorials-blog-api.vercel.app/api/categories');
 
             setCats(res.data);
         };
