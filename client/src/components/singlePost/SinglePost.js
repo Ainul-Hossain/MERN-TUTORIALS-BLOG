@@ -14,7 +14,7 @@ const SinglePost = () => {
 
     const [post, setPost] = useState({});
 
-    const PF = "http://localhost:5000/images/";
+    const PF = "https://mern-tutorials-blog-api.vercel.app/images/";
 
     const {user} = useContext(Context);
 
@@ -26,7 +26,7 @@ const SinglePost = () => {
 
     useEffect(()=>{
         const getPost = async function (){
-            const res = await axios.get('http://localhost:5000/api/posts/'+path);
+            const res = await axios.get('https://mern-tutorials-blog-api.vercel.app/api/posts/'+path);
 
             //console.log(res)
 
@@ -40,7 +40,7 @@ const SinglePost = () => {
 
     const handleDelete = async ()=>{
         try{
-            await axios.delete('http://localhost:5000/api/posts/'+path, {
+            await axios.delete('https://mern-tutorials-blog-api.vercel.app/api/posts/'+path, {
                 data: {username: user.username},
             });
             window.location.replace('/');
@@ -51,7 +51,7 @@ const SinglePost = () => {
 
     const handleUpdate = async ()=>{
         try{
-            await axios.put('http://localhost:5000/api/posts/'+post._id, {
+            await axios.put('https://mern-tutorials-blog-api.vercel.app/api/posts/'+post._id, {
                 username: user.username,
                 title: title,
                 desc: desc,
