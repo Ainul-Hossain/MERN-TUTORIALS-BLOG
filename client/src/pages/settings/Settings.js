@@ -44,8 +44,12 @@ const Settings = () => {
         
         try{
             const res = await axios.put('https://mern-tutorials-blog-api.vercel.app/api/users/'+user._id, updatedUser);
-            setSuccess(true);
+
+            await axios.put(`http://localhost:5000/api/posts/?user=${user.username}`, {  // corresponding post's username also updated
+                user: username
+            })
             
+            setSuccess(true);
             dispatch({type: 'UPDATE_SUCCESSFUL', payload: res.data});
         }catch(err){
             dispatch({type: 'UPDATE_FAILURE'});
